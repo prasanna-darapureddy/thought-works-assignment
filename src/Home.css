@@ -49,6 +49,23 @@
   width: 300px;
   border-radius: 10px;
 }
+.btns-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  width: 100px;
+  padding: 10px;
+  background-color: aqua;
+}
+.outline-btn {
+  outline: aqua;
+  background-color: transparent;
+}
 
 @media screen and (max-wdith: 900px) {
   .each-blog {
@@ -61,7 +78,6 @@
     justify-content: center;
     background-color: white;
   }
-  ,
   .user-input {
     width: 250px;
   }

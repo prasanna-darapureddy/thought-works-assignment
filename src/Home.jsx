@@ -34,7 +34,11 @@ const Home = () => {
       );
     setFilteredList(updatedList);
   };
-  console.log(filteredList);
+
+  const handleEditBtn = (id) => {
+    const updatedList = blogsList.filter((eachBlog) => eachBlog.id !== id);
+    setFilteredList(updatedList);
+  };
 
   const renderLoadingView = () => (
     <div className="loading-container">
@@ -50,18 +54,32 @@ const Home = () => {
 
   const renderSuccessView = () => (
     <ul className="blogs-container">
-      {blogsList?.length > 0 ? (
+      {filteredList?.length > 0 ? (
         <>
           {filteredList.map((eachBlog, index) => (
             <li className="each-blog" key={index + "blog"}>
               <h4 className="title">{eachBlog.title}</h4>
               <p>{eachBlog.body}</p>
+              <div className="btns-container">
+                <button
+                  className="btn"
+                  onClick={() => handleEditBtn(eachBlog.id)}
+                >
+                  Edit
+                </button>
+                <button
+                  className="outline-btn"
+                  onClick={() => handleDeleteBtn(eachBlog.id)}
+                >
+                  Delete
+                </button>
+              </div>
             </li>
           ))}
         </>
       ) : (
         <div className="loading-container">
-          <p className="failed-text">No Blogs Yet</p>
+          <p className="failed-text">No Blogs</p>
         </div>
       )}
     </ul>
