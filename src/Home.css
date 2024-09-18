@@ -1,0 +1,68 @@
+.bg-container {
+  background-color: rgb(207, 247, 247);
+  background-size: cover;
+}
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+}
+.failed-text {
+  color: red;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
+.loading-text {
+  color: blue;
+  font-weight: bold;
+  font-size: 20px;
+}
+.blogs-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  gap: 20px;
+}
+.each-blog {
+  height: 300px;
+  width: 300px;
+  box-shadow: 0px 4px 8px 0px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+.title {
+  font-size: 25px;
+  margin-bottom: 0px;
+}
+.user-input {
+  outline: none;
+  padding: 10px;
+  border: none;
+  width: 300px;
+  border-radius: 10px;
+}
+
+@media screen and (max-wdith: 900px) {
+  .each-blog {
+    height: 250px;
+    width: 250px;
+    box-shadow: 0px 4px 8px 0px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+  }
+  ,
+  .user-input {
+    width: 250px;
+  }
+}
