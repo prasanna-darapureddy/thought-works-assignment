@@ -5,6 +5,8 @@ const Home = () => {
   const [blogsList, setBlogsList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [status, setStatus] = useState("");
+  const [id, setId] = useState("");
+  // const navigate = useNavigate();
 
   const getBlogsData = async () => {
     const url = "https://jsonplaceholder.typicode.com/posts";
@@ -35,9 +37,13 @@ const Home = () => {
     setFilteredList(updatedList);
   };
 
-  const handleEditBtn = (id) => {
+  const handleDeleteBtn = (id) => {
     const updatedList = blogsList.filter((eachBlog) => eachBlog.id !== id);
     setFilteredList(updatedList);
+  };
+
+  const handleReadMore = (id) => {
+    // navigate("/blog-details", { state: { blogId: id } });
   };
 
   const renderLoadingView = () => (
@@ -59,14 +65,15 @@ const Home = () => {
           {filteredList.map((eachBlog, index) => (
             <li className="each-blog" key={index + "blog"}>
               <h4 className="title">{eachBlog.title}</h4>
-              <p>{eachBlog.body}</p>
+              <p className="description">{eachBlog.body.slice(0, 80)}...</p>
+              <button
+                className="btn"
+                onClick={() => handleReadMore(eachBlog.id)}
+              >
+                Read more
+              </button>
+
               <div className="btns-container">
-                <button
-                  className="btn"
-                  onClick={() => handleEditBtn(eachBlog.id)}
-                >
-                  Edit
-                </button>
                 <button
                   className="outline-btn"
                   onClick={() => handleDeleteBtn(eachBlog.id)}

@@ -1,6 +1,10 @@
 .bg-container {
   background-color: rgb(207, 247, 247);
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .loading-container {
   display: flex;
@@ -41,6 +45,7 @@
 .title {
   font-size: 25px;
   margin-bottom: 0px;
+  text-transform: capitalize;
 }
 .user-input {
   outline: none;
@@ -52,19 +57,35 @@
 .btns-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 .btn {
   outline: none;
   border: none;
-  border-radius: 10px;
   width: 100px;
   padding: 10px;
-  background-color: aqua;
+  padding-top: 0px;
+  color: aqua;
+  background-color: transparent;
+  cursor: pointer;
+  align-self: flex-end;
 }
 .outline-btn {
   outline: aqua;
+  border: 1px solid aqua;
+  border-radius: 10px;
+  width: 50px;
+  padding: 3px;
   background-color: transparent;
+  cursor: pointer;
+}
+.description {
+  display: flex;
+  align-items: center;
+}
+.description::first-letter {
+  text-transform: capitalize;
 }
 
 @media screen and (max-wdith: 900px) {
